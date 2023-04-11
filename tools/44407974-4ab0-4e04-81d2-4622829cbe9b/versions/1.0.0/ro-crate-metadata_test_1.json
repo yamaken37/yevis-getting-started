@@ -1,0 +1,547 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    {
+      "FileStats": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#FileStats",
+      "Format": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#Format",
+      "IntermediateFile": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#IntermediateFile",
+      "OutputFile": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#OutputFile",
+      "SapporoConfiguration": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#SapporoConfiguration",
+      "SapporoService": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#SapporoService",
+      "TestDefinition": "https://w3id.org/ro/terms/test#TestDefinition",
+      "TestEnvironment": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#TestEnvironment",
+      "TestInstance": "https://w3id.org/ro/terms/test#TestInstance",
+      "TestResult": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#TestResult",
+      "TestService": "https://w3id.org/ro/terms/test#TestService",
+      "TestSuite": "https://w3id.org/ro/terms/test#TestSuite",
+      "WorkflowAttachment": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#WorkflowAttachment",
+      "attachment": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#attachment",
+      "cmd": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#cmd",
+      "configuration": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#configuration",
+      "cpuArchitecture": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#cpuArchitecture",
+      "cpuCount": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#cpuCount",
+      "definition": "https://w3id.org/ro/terms/test#definition",
+      "duplicateRate": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#duplicateRate",
+      "duplicateReads": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#duplicateReads",
+      "engineVersion": "https://w3id.org/ro/terms/test#engineVersion",
+      "environment": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#environment",
+      "executableWorkflows": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#executableWorkflows",
+      "exitCode": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#exitCode",
+      "format": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#format",
+      "freeDiskSpace": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#freeDiskSpace",
+      "generatedBy": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#generatedBy",
+      "getRuns": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#getRuns",
+      "gid": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#gid",
+      "inDocker": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#inDocker",
+      "indelsCount": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#indelsCount",
+      "instance": "https://w3id.org/ro/terms/test#instance",
+      "intermediateFiles": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#intermediateFiles",
+      "lineCount": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#lineCount",
+      "mappedRate": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#mappedRate",
+      "mappedReads": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#mappedReads",
+      "mode": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#mode",
+      "os": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#os",
+      "osVersion": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#osVersion",
+      "outputs": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#outputs",
+      "pid": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#pid",
+      "registeredOnlyMode": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#registeredOnlyMode",
+      "resource": "https://w3id.org/ro/terms/test#resource",
+      "result": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#result",
+      "runId": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#runId",
+      "runSh": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#runSh",
+      "runsOn": "https://w3id.org/ro/terms/test#runsOn",
+      "sapporoConfig": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#sapporoConfig",
+      "sapporoEndpoint": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#sapporoEndpoint",
+      "serviceInfo": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#serviceInfo",
+      "sha512": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#sha512",
+      "snpsCount": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#snpsCount",
+      "state": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#state",
+      "stats": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#stats",
+      "stderr": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#stderr",
+      "stdout": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#stdout",
+      "totalMemory": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#totalMemory",
+      "totalReads": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#totalReads",
+      "uid": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#uid",
+      "unmappedRate": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#unmappedRate",
+      "unmappedReads": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#unmappedReads",
+      "urlPrefix": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#urlPrefix",
+      "variantCount": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#variantCount",
+      "workflowAttachment": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#workflowAttachment",
+      "workflowEngineParameters": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#workflowEngineParameters",
+      "workflowParameters": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#workflowParameters",
+      "yevisId": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#yevisId",
+      "yevisMetadata": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#yevisMetadata",
+      "yevisTestId": "https://raw.githubusercontent.com/sapporo-wes/sapporo-service/main/sapporo/ro-terms.csv#yevisTestId"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "about": {
+        "@id": "#sapporo-test-suite"
+      },
+      "author": {
+        "@id": "https://github.com/yamaken37"
+      },
+      "datePublished": "2023-04-11T05:39:55+00:00",
+      "description": "RO-Crate of Sapporo's run execution results.",
+      "hasPart": [
+        {
+          "@id": "exe/"
+        },
+        {
+          "@id": "outputs/"
+        },
+        {
+          "@id": "https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/download-sra.cwl"
+        },
+        {
+          "@id": "service_info.json"
+        },
+        {
+          "@id": "executable_workflows.json"
+        },
+        {
+          "@id": "run.sh"
+        },
+        {
+          "@id": "sapporo_config.json"
+        },
+        {
+          "@id": "run_request.json"
+        },
+        {
+          "@id": "exe/workflow_params.json"
+        },
+        {
+          "@id": "workflow_engine_params.txt"
+        },
+        {
+          "@id": "yevis-metadata.yml"
+        },
+        {
+          "@id": "stdout.log"
+        },
+        {
+          "@id": "stderr.log"
+        },
+        {
+          "@id": "outputs/SRR1274307.sra"
+        }
+      ],
+      "mainEntity": {
+        "@id": "https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/download-sra.cwl"
+      },
+      "name": "Sapporo RO-Crate"
+    },
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        },
+        {
+          "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
+        }
+      ],
+      "license": {
+        "@id": "http://choosealicense.com/licenses/apache-2.0/"
+      }
+    },
+    {
+      "@id": "http://choosealicense.com/licenses/apache-2.0/",
+      "@type": [
+        "CreativeWork"
+      ],
+      "name": "Apache License 2.0"
+    },
+    {
+      "@id": "https://github.com/yamaken37",
+      "@type": [
+        "Person"
+      ],
+      "affiliation": "xxx",
+      "name": "yamaken"
+    },
+    {
+      "@id": "exe/",
+      "@type": "Dataset",
+      "hasPart": {
+        "@id": "exe/workflow_params.json"
+      }
+    },
+    {
+      "@id": "outputs/",
+      "@type": "Dataset",
+      "hasPart": {
+        "@id": "outputs/SRR1274307.sra"
+      }
+    },
+    {
+      "@id": "https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/download-sra.cwl",
+      "@type": [
+        "File",
+        "SoftwareSourceCode",
+        "ComputationalWorkflow"
+      ],
+      "contentSize": 1067,
+      "description": {
+        "@id": "https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/README.md"
+      },
+      "encodingFormat": "text/plain",
+      "lineCount": 46,
+      "name": "Yevis getting started - Download SRA",
+      "programmingLanguage": {
+        "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl"
+      },
+      "sha512": "03ae7b28a47668fc35a7356498c1de51e5602a2120e0b8cf1d1d5bf5a234b5b2439c082e67634b7136855cc6f6a6249c3cbb51b460f4ad86084f74c8c8b60b2d",
+      "text": "cwlVersion: v1.0\nclass: CommandLineTool\nlabel: \"download-sra: A simple download tool to get .sra file\"\ndoc: \"A simple download tool to get .sra file from a repository of INSDC members. https://github.com/inutano/download-sra\"\n\nhints:\n  DockerRequirement:\n    dockerPull: ghcr.io/inutano/download-sra:a827d85\n\nbaseCommand: [\"download-sra\"]\n\ninputs:\n  repo:\n    type: string\n    default: \"ddbj\"\n    inputBinding:\n      position: 1\n      prefix: \"-r\"\n  run_ids:\n    type:\n      - string\n      - string[]\n    inputBinding:\n      position: 2\n\noutputs:\n  sraFiles:\n    type: File[]\n    outputBinding:\n      glob: \"*sra\"\n\n$namespaces:\n  s: https://schema.org/\n  edam: http://edamontology.org/\n\ns:license: https://spdx.org/licenses/Apache-2.0\ns:codeRepository: https://github.com/pitagora-network/pitagora-cwl\ns:author:\n  - class: s:Person\n    s:identifier: https://orcid.org/0000-0003-3777-5945\n    s:email: mailto:inutano@gmail.com\n    s:name: Tazro Ohta\n\n$schemas:\n  - https://schema.org/version/latest/schemaorg-current-http.rdf\n  - http://edamontology.org/EDAM_1.18.owl\n",
+      "version": "1.0.0",
+      "yevisId": "44407974-4ab0-4e04-81d2-4622829cbe9b"
+    },
+    {
+      "@id": "https://w3id.org/cwl/v1.0/",
+      "@type": [
+        "WebPage"
+      ]
+    },
+    {
+      "@id": "https://www.commonwl.org/",
+      "@type": [
+        "WebPage"
+      ]
+    },
+    {
+      "@id": "https://w3id.org/workflowhub/workflow-ro-crate#cwl",
+      "@type": "ComputerLanguage",
+      "alternateName": "CWL",
+      "identifier": {
+        "@id": "https://w3id.org/cwl/v1.0/"
+      },
+      "name": "Common Workflow Language",
+      "url": {
+        "@id": "https://www.commonwl.org/"
+      },
+      "version": "v1.0"
+    },
+    {
+      "@id": "https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/README.md",
+      "@type": [
+        "WebPage"
+      ],
+      "name": "README.md"
+    },
+    {
+      "@id": "#sapporo-test-suite",
+      "@type": "TestSuite",
+      "definition": {
+        "@id": "run_request.json"
+      },
+      "instance": {
+        "@id": "#sapporo-test-instance"
+      },
+      "mainEntity": {
+        "@id": "https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/download-sra.cwl"
+      },
+      "name": "Sapporo test suite",
+      "result": {
+        "@id": "#sapporo-test-result"
+      }
+    },
+    {
+      "@id": "#sapporo-test-instance",
+      "@type": "TestInstance",
+      "environment": {
+        "@id": "#sapporo-test-environment"
+      },
+      "name": "Sapporo test instance",
+      "runsOn": {
+        "@id": "#sapporo-service"
+      },
+      "url": "http://localhost:1122"
+    },
+    {
+      "@id": "#sapporo-service",
+      "@type": [
+        "TestService",
+        "SapporoService",
+        "SoftwareApplication"
+      ],
+      "configuration": {
+        "@id": "#sapporo-config"
+      },
+      "name": "Sapporo-service",
+      "resource": "/",
+      "url": {
+        "@id": "https://github.com/sapporo-wes/sapporo-service"
+      },
+      "version": "1.4.9"
+    },
+    {
+      "@id": "https://github.com/sapporo-wes/sapporo-service",
+      "@type": [
+        "WebPage"
+      ]
+    },
+    {
+      "@id": "#sapporo-config",
+      "@type": [
+        "SapporoConfiguration"
+      ],
+      "executableWorkflows": {
+        "@id": "executable_workflows.json"
+      },
+      "getRuns": true,
+      "registeredOnlyMode": false,
+      "runSh": {
+        "@id": "run.sh"
+      },
+      "sapporoConfig": {
+        "@id": "sapporo_config.json"
+      },
+      "sapporoEndpoint": "http://localhost:1122",
+      "serviceInfo": {
+        "@id": "service_info.json"
+      },
+      "urlPrefix": "/",
+      "workflowAttachment": true
+    },
+    {
+      "@id": "service_info.json",
+      "@type": "File",
+      "contentSize": 1632,
+      "dateModified": "2023-04-11T05:39:26.099217",
+      "encodingFormat": "application/json",
+      "gid": 0,
+      "lineCount": 83,
+      "mode": "-rw-r--r--",
+      "name": "Sapporo service info",
+      "sha512": "63b75e3740bb06a99fced06b2b7e714229d3d46b01e634ae99f70630816b9bcf2ab2da4e32296a1159667a5bfaea86176faf2b8d3fec1a16b2a2020d8956f409",
+      "text": "{\n  \"workflow_type_versions\": {\n    \"CWL\": {\n      \"workflow_type_version\": [\n        \"v1.0\",\n        \"v1.1\",\n        \"v1.2\"\n      ]\n    },\n    \"WDL\": {\n      \"workflow_type_version\": [\n        \"1.0\"\n      ]\n    },\n    \"NFL\": {\n      \"workflow_type_version\": [\n        \"1.0\",\n        \"DSL2\"\n      ]\n    },\n    \"SMK\": {\n      \"workflow_type_version\": [\n        \"1.0\"\n      ]\n    },\n    \"StreamFlow\": {\n      \"workflow_type_version\": [\n        \"v1.0\"\n      ]\n    }\n  },\n  \"supported_filesystem_protocols\": [\n    \"http\",\n    \"https\",\n    \"file\",\n    \"s3\"\n  ],\n  \"default_workflow_engine_parameters\": {\n    \"nextflow\": [\n      {\n        \"name\": \"-dsl1\",\n        \"type\": \"str\",\n        \"default_value\": \"\"\n      }\n    ],\n    \"snakemake\": [\n      {\n        \"name\": \"--cores\",\n        \"type\": \"int\",\n        \"default_value\": 1\n      },\n      {\n        \"name\": \"--use-conda\",\n        \"type\": \"str\",\n        \"default_value\": \"\"\n      }\n    ]\n  },\n  \"workflow_engine_versions\": {\n    \"cwltool\": \"3.1.20220628170238\",\n    \"nextflow\": \"22.04.4\",\n    \"toil (experimental)\": \"4.1.0\",\n    \"cromwell\": \"80\",\n    \"snakemake\": \"v7.8.3\",\n    \"ep3 (experimental)\": \"v1.7.0\",\n    \"streamflow\": \"0.1.3\"\n  },\n  \"auth_instructions_url\": \"https://github.com/sapporo-wes/sapporo-service\",\n  \"contact_info_url\": \"https://github.com/sapporo-wes/sapporo-service\",\n  \"tags\": {\n    \"wes-name\": \"sapporo\",\n    \"sapporo-version\": \"1.4.9\",\n    \"news_content\": \"\",\n    \"get_runs\": true,\n    \"workflow_attachment\": true,\n    \"registered_only_mode\": false\n  },\n  \"supported_wes_versions\": [\n    \"sapporo-wes-1.0.1\"\n  ],\n  \"system_state_counts\": {\n    \"UNKNOWN\": 1\n  }\n}",
+      "uid": 0
+    },
+    {
+      "@id": "executable_workflows.json",
+      "@type": "File",
+      "contentSize": 33024,
+      "dateModified": "2023-04-11T05:39:26.875233",
+      "encodingFormat": "text/plain",
+      "gid": 0,
+      "lineCount": 650,
+      "mode": "-rw-r--r--",
+      "name": "Sapporo executable workflows",
+      "sha512": "186d6d93ed49399c525e4541e2259da3d6b6a5cc6cfe76489930061add95affad25477d286ede26aa56d81f7fb4b0a452202715bb2a4611ee1e7c8912d60443d",
+      "uid": 0
+    },
+    {
+      "@id": "run.sh",
+      "@type": "File",
+      "contentSize": 11327,
+      "dateModified": "2023-04-11T05:39:26.875233",
+      "encodingFormat": "text/x-shellscript",
+      "gid": 0,
+      "lineCount": 307,
+      "mode": "-rw-r--r--",
+      "name": "Sapporo run.sh",
+      "sha512": "b0f968d72e5722befba64719731849f574ab20f7a3c2cd0ab8165457c629cedbcc88b0d4392d812533ac6c6316647e9a089339e57269332c40f04674842d84b9",
+      "uid": 0
+    },
+    {
+      "@id": "sapporo_config.json",
+      "@type": "File",
+      "contentSize": 441,
+      "dateModified": "2023-04-11T05:39:26.095217",
+      "encodingFormat": "application/json",
+      "gid": 0,
+      "lineCount": 10,
+      "mode": "-rw-r--r--",
+      "name": "Sapporo runtime configuration",
+      "sha512": "e14130e9a59dc8e1ad8da08c9ef4cc1c85460a8c90b1131d02a916f7c72e27be78135737b23f0b762f6fdee06c72392ddaf45ec8da6b2ca8b516bde375f83a3d",
+      "text": "{\n  \"sapporo_version\": \"1.4.9\",\n  \"get_runs\": true,\n  \"workflow_attachment\": true,\n  \"registered_only_mode\": false,\n  \"service_info\": \"/usr/local/lib/python3.8/site-packages/sapporo/service-info.json\",\n  \"executable_workflows\": \"/usr/local/lib/python3.8/site-packages/sapporo/executable_workflows.json\",\n  \"run_sh\": \"/usr/local/lib/python3.8/site-packages/sapporo/run.sh\",\n  \"url_prefix\": \"/\",\n  \"sapporo_endpoint\": \"http://localhost:1122\"\n}",
+      "uid": 0
+    },
+    {
+      "@id": "#sapporo-test-environment",
+      "@type": [
+        "TestEnvironment"
+      ],
+      "cpuArchitecture": "x86_64",
+      "cpuCount": 2,
+      "freeDiskSpace": 30937612288,
+      "gid": 0,
+      "inDocker": true,
+      "os": "Linux",
+      "osVersion": "5.15.0-1035-azure",
+      "totalMemory": 7281270784,
+      "uid": 0
+    },
+    {
+      "@id": "run_request.json",
+      "@type": [
+        "TestDefinition",
+        "File"
+      ],
+      "cmd": "docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -e DOCKER_HOST=unix:///var/run/docker.sock -v /tmp:/tmp -v /home/runner/work/yevis-getting-started/yevis-getting-started/test-results/fd/fdc17606-9883-4841-a236-359bcd3adb7e:/home/runner/work/yevis-getting-started/yevis-getting-started/test-results/fd/fdc17606-9883-4841-a236-359bcd3adb7e -w=/home/runner/work/yevis-getting-started/yevis-getting-started/test-results/fd/fdc17606-9883-4841-a236-359bcd3adb7e/exe quay.io/commonwl/cwltool:3.1.20220628170238 --outdir /home/runner/work/yevis-getting-started/yevis-getting-started/test-results/fd/fdc17606-9883-4841-a236-359bcd3adb7e/outputs https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/download-sra.cwl /home/runner/work/yevis-getting-started/yevis-getting-started/test-results/fd/fdc17606-9883-4841-a236-359bcd3adb7e/exe/workflow_params.json 1>/home/runner/work/yevis-getting-started/yevis-getting-started/test-results/fd/fdc17606-9883-4841-a236-359bcd3adb7e/stdout.log 2>/home/runner/work/yevis-getting-started/yevis-getting-started/test-results/fd/fdc17606-9883-4841-a236-359bcd3adb7e/stderr.log",
+      "conformsTo": {
+        "@id": "#cwltool"
+      },
+      "contentSize": 461,
+      "dateModified": "2023-04-11T05:39:26.099217",
+      "encodingFormat": "application/json",
+      "engineVersion": "3.1.20220628170238",
+      "gid": 0,
+      "lineCount": 10,
+      "mode": "-rw-r--r--",
+      "name": "Sapporo run request",
+      "sha512": "a5aa0adceae9e523fa42d5932512896b284abe63beeb7200ae05e1d4487ea8beec4191665e871280b8d8dd895fb23c2d2b0d0d32ad27c1782caabba03a8e97ed",
+      "text": "{\n  \"workflow_params\": \"# ncbi, ebi, or ddbj can be used for source repository\\nrepo: ddbj\\n# Run IDs, e.g. SRR1274306\\nrun_ids:\\n  - SRR1274307\\n\",\n  \"workflow_type\": \"CWL\",\n  \"workflow_type_version\": \"v1.0\",\n  \"tags\": null,\n  \"workflow_engine_name\": \"cwltool\",\n  \"workflow_engine_parameters\": \"{}\",\n  \"workflow_url\": \"https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/download-sra.cwl\",\n  \"workflow_name\": null,\n  \"workflow_attachment\": \"[]\"\n}",
+      "uid": 0,
+      "workflowEngineParameters": {
+        "@id": "workflow_engine_params.txt"
+      },
+      "workflowParameters": {
+        "@id": "exe/workflow_params.json"
+      },
+      "yevisMetadata": {
+        "@id": "yevis-metadata.yml"
+      },
+      "yevisTestId": "test_1"
+    },
+    {
+      "@id": "exe/workflow_params.json",
+      "@type": [
+        "File"
+      ],
+      "contentSize": 117,
+      "dateModified": "2023-04-11T05:39:26.099217",
+      "encodingFormat": "text/plain",
+      "gid": 0,
+      "lineCount": 5,
+      "mode": "-rw-r--r--",
+      "name": "Sapporo workflow parameters",
+      "sha512": "1c17526fd8cb5914f8c721eaa5e71f0034e6caf1320cc0a61f1283f747b65b39556689dff937e9f64b70c7a83e9da60419ae144e5ac79754b6c44ca7f19d95bc",
+      "text": "# ncbi, ebi, or ddbj can be used for source repository\nrepo: ddbj\n# Run IDs, e.g. SRR1274306\nrun_ids:\n  - SRR1274307\n",
+      "uid": 0,
+      "url": "https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/wf_params.yml"
+    },
+    {
+      "@id": "workflow_engine_params.txt",
+      "@type": [
+        "File"
+      ],
+      "contentSize": 0,
+      "dateModified": "2023-04-11T05:39:26.099217",
+      "encodingFormat": "inode/x-empty",
+      "gid": 0,
+      "lineCount": 0,
+      "mode": "-rw-r--r--",
+      "name": "Sapporo workflow engine parameters",
+      "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e",
+      "text": "",
+      "uid": 0
+    },
+    {
+      "@id": "yevis-metadata.yml",
+      "@type": [
+        "File"
+      ],
+      "contentSize": 811,
+      "dateModified": "2023-04-11T05:39:26.875233",
+      "encodingFormat": "application/json",
+      "gid": 0,
+      "lineCount": 0,
+      "mode": "-rw-r--r--",
+      "name": "Yevis metadata",
+      "sha512": "7b657f374bb2609118bfc78a73c9934d6eaaed76d97f0ba980a8d6f1514cf1c2508eafaf967a8f31f57a5fc7960edeeebc286aef747548963163d68d5036c6b1",
+      "text": "{\"id\":\"44407974-4ab0-4e04-81d2-4622829cbe9b\",\"version\":\"1.0.0\",\"license\":\"Apache-2.0\",\"authors\":[{\"github_account\":\"yamaken37\",\"name\":\"yamaken\",\"affiliation\":\"xxx\"}],\"zenodo\":{\"url\":\"https://zenodo.org/record/7816447\",\"id\":7816447,\"doi\":\"10.5281/zenodo.7816447\",\"concept_doi\":\"10.5281/zenodo.7816446\"},\"workflow\":{\"name\":\"Yevis getting started - Download SRA\",\"readme\":\"https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/README.md\",\"language\":{\"type\":\"CWL\",\"version\":\"v1.0\"},\"files\":[{\"url\":\"https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/download-sra.cwl\",\"target\":\"download-sra.cwl\",\"type\":\"primary\"}],\"testing\":[{\"id\":\"test_1\",\"files\":[{\"url\":\"https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/wf_params.yml\",\"target\":\"wf_params.yml\",\"type\":\"wf_params\"}]}]}}",
+      "uid": 0
+    },
+    {
+      "@id": "https://github.com/common-workflow-language/cwltool",
+      "@type": [
+        "WebPage"
+      ]
+    },
+    {
+      "@id": "#cwltool",
+      "@type": "SoftwareApplication",
+      "name": "cwltool",
+      "url": {
+        "@id": "https://github.com/common-workflow-language/cwltool"
+      },
+      "version": "3.1.20220628170238"
+    },
+    {
+      "@id": "#sapporo-test-result",
+      "@type": [
+        "TestResult"
+      ],
+      "endTime": "2023-04-11T05:39:55",
+      "exitCode": 0,
+      "intermediateFiles": [],
+      "name": "Sapporo test result",
+      "outputs": {
+        "@id": "outputs/SRR1274307.sra"
+      },
+      "pid": 12,
+      "runId": "fdc17606-9883-4841-a236-359bcd3adb7e",
+      "startTime": "2023-04-11T05:39:27",
+      "state": "COMPLETE",
+      "stderr": {
+        "@id": "stderr.log"
+      },
+      "stdout": {
+        "@id": "stdout.log"
+      }
+    },
+    {
+      "@id": "stdout.log",
+      "@type": "File",
+      "contentSize": 552,
+      "dateModified": "2023-04-11T05:39:53.591793",
+      "encodingFormat": "application/json",
+      "gid": 0,
+      "lineCount": 12,
+      "mode": "-rw-r--r--",
+      "name": "Sapporo stdout",
+      "sha512": "d712843efc8e327dc8c8f2a350f00ac64984fc892c7ef99b016af055867d5083c44bf688767b0d40a9bbb172867222b6e63d296ac7b3913507d0d92f68ae8e13",
+      "text": "{\n    \"sraFiles\": [\n        {\n            \"location\": \"file:///home/runner/work/yevis-getting-started/yevis-getting-started/test-results/fd/fdc17606-9883-4841-a236-359bcd3adb7e/outputs/SRR1274307.sra\",\n            \"basename\": \"SRR1274307.sra\",\n            \"class\": \"File\",\n            \"checksum\": \"sha1$8b01212b2948520a60dde800042df69a6b27b814\",\n            \"size\": 946479,\n            \"path\": \"/home/runner/work/yevis-getting-started/yevis-getting-started/test-results/fd/fdc17606-9883-4841-a236-359bcd3adb7e/outputs/SRR1274307.sra\"\n        }\n    ]\n}\n",
+      "uid": 0
+    },
+    {
+      "@id": "stderr.log",
+      "@type": "File",
+      "contentSize": 3216,
+      "dateModified": "2023-04-11T05:39:55.279835",
+      "encodingFormat": "text/plain",
+      "gid": 0,
+      "lineCount": 82,
+      "mode": "-rw-r--r--",
+      "name": "Sapporo stderr",
+      "sha512": "2ef426f1ed5ae4b8332aca9713a79ebe272af7c79825ffc9931d32ef9f659bbc29c911d52dc87c8c92e013a69b36da4fdd1cd9e5bea4966a89063fe3d17f162c",
+      "text": "jq: error (at /home/runner/work/yevis-getting-started/yevis-getting-started/test-results/fd/fdc17606-9883-4841-a236-359bcd3adb7e/run_request.json:10): null (null) only strings can be parsed\nc066f118a: Pulling fs layer\n03624af3d529: Pulling fs layer\n4ae78d2f3e6f: Pulling fs layer\n3c9ebd5c9e7a: Pulling fs layer\nb5e08ba51115: Pulling fs layer\nfab42e0ffb69: Pulling fs layer\naedb3ba3b639: Pulling fs layer\n4ae78d2f3e6f: Waiting\n3c9ebd5c9e7a: Waiting\nb5e08ba51115: Waiting\nfab42e0ffb69: Waiting\naedb3ba3b639: Waiting\n03624af3d529: Waiting\n2f22aa6a21a6: Verifying Checksum\n2f22aa6a21a6: Download complete\n2408cc74d12b: Verifying Checksum\n2408cc74d12b: Download complete\n54cc066f118a: Verifying Checksum\n54cc066f118a: Download complete\n03624af3d529: Verifying Checksum\n03624af3d529: Download complete\n2408cc74d12b: Pull complete\n4ae78d2f3e6f: Verifying Checksum\n4ae78d2f3e6f: Download complete\nfab42e0ffb69: Verifying Checksum\nfab42e0ffb69: Download complete\naedb3ba3b639: Verifying Checksum\naedb3ba3b639: Download complete\n2f22aa6a21a6: Pull complete\nb5e08ba51115: Verifying Checksum\nb5e08ba51115: Download complete\n54cc066f118a: Pull complete\n03624af3d529: Pull complete\n3c9ebd5c9e7a: Verifying Checksum\n3c9ebd5c9e7a: Download complete\n4ae78d2f3e6f: Pull complete\n3c9ebd5c9e7a: Pull complete\nb5e08ba51115: Pull complete\nfab42e0ffb69: Pull complete\naedb3ba3b639: Pull complete\nDigest: sha256:6f27101faaf736f4930b3e2eaead2c8326810452d3e978fe987d2a312585a286\nStatus: Downloaded newer image for quay.io/commonwl/cwltool:3.1.20220628170238\n\u001b[1;30mINFO\u001b[0m /usr/local/bin/cwltool 3.1\nWhile fetching https://zenodo.org/api/files/43857fb4-7cde-48f0-8e8c-d0acc85aa406/download-sra.cwl, got content-type of 'application/octet-stream, application/octet-stream'. Expected one of ['text/plain', 'application/json', 'text/vnd.yaml', 'text/yaml', 'text/x-yaml', 'application/x-yaml', 'application/octet-stream'].\n\u001b[1;30mINFO\u001b[0m ['docker', 'pull', 'ghcr.io/inutano/download-sra:a827d85']\na827d85: Pulling from inutano/download-sra\n40e059520d19: Pulling fs layer\n6e03f2715249: Pulling fs layer\nb8ad704c2702: Pulling fs layer\n40e059520d19: Verifying Checksum\n40e059520d19: Download complete\nb8ad704c2702: Verifying Checksum\nb8ad704c2702: Download complete\n6e03f2715249: Verifying Checksum\n6e03f2715249: Download complete\n40e059520d19: Pull complete\n6e03f2715249: Pull complete\nb8ad704c2702: Pull complete\nDigest: sha256:d3f69275d893c1dd5fbaff1d5ee5bb2be77b65e801d47a93dd8c3649c0833757\nStatus: Downloaded newer image for ghcr.io/inutano/download-sra:a827d85\nghcr.io/inutano/download-sra:a827d85\n\u001b[1;30mINFO\u001b[0m [job download-sra.cwl] /tmp/uznl4cbc$ docker \\\n    run \\\n    -i \\\n    --mount=type=bind,source=/tmp/uznl4cbc,target=/UOoUCa \\\n    --mount=type=bind,source=/tmp/v5lrfjuz,target=/tmp \\\n    --workdir=/UOoUCa \\\n    --read-only=true \\\n    --user=0:0 \\\n    --rm \\\n    --cidfile=/tmp/sx_i3zws/20230411053946-580143.cid \\\n    --env=TMPDIR=/tmp \\\n    --env=HOME=/UOoUCa \\\n    ghcr.io/inutano/download-sra:a827d85 \\\n    download-sra \\\n    -r \\\n    ddbj \\\n    SRR1274307\n\u001b[1;30mINFO\u001b[0m [job download-sra.cwl] Max memory used: 2MiB\n\u001b[1;30mINFO\u001b[0m [job download-sra.cwl] completed success\n\u001b[1;30mINFO\u001b[0m Final process status is success\n",
+      "uid": 0
+    },
+    {
+      "@id": "outputs/SRR1274307.sra",
+      "@type": [
+        "File",
+        "FormalParameter",
+        "OutputFile"
+      ],
+      "contentSize": 946479,
+      "dateModified": "2023-04-11T05:39:53.143783",
+      "encodingFormat": "application/octet-stream",
+      "gid": 0,
+      "mode": "-rw-r--r--",
+      "sha512": "7c98b69378e8bcda79f9f48dc3b99fd7e69da0efb7fd61bcc86f54618d551d5e6d918ea8695d6f38306241d89887ff830f1a321a3afa361b487483886651e81e",
+      "uid": 0,
+      "url": "http://localhost:1122/runs/fdc17606-9883-4841-a236-359bcd3adb7e/data/outputs/SRR1274307.sra"
+    }
+  ]
+}
