@@ -51,7 +51,10 @@ jobs:
 
       - name: "List test results"
         run: sudo ls -lR ./test-results > ./test-logs/test-results-list.txt
-
+        
+      - name: "Pack chromewell result for debug"
+        run: sudo tar zcf test-logs/test-results.tar.gz --exclude "Homo_sapiens_assembly19.fasta" ./test-results
+        
       - name: "Upload test logs"
         uses: actions/upload-artifact@v3
         with:
